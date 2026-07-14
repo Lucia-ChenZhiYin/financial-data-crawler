@@ -12,10 +12,10 @@
 | **程式語言** | Python 3.13.9 |
 
 ###主要套件
-    *'request'(網路請求發送)
-    *'beautifulsoup4'(HTML網頁標籤解析)
-    *'json'(簡單資料交換格式儲存)
-    *'pandas' & 'openpyxl'(Excel資料處理與匯出)
+    * 'request'(網路請求發送)
+    * 'beautifulsoup4'(HTML網頁標籤解析)
+    * 'json'(簡單資料交換格式儲存)
+    * 'pandas' & 'openpyxl'(Excel資料處理與匯出)
     
 
 
