@@ -12,6 +12,7 @@
 | **程式語言** | Python 3.13.9 |
 
 ###主要套件
+
     * `requests`(網路請求發送)
     * `beautifulsoup4`(HTML網頁標籤解析)
     * `json`(簡單資料交換格式儲存)
