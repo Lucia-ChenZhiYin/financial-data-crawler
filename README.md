@@ -1,9 +1,11 @@
 # financial-data-crawler
-Following【Python 爬蟲 】2 小時初學者課程 ：一次學會 PTT 爬蟲、Hahow 爬蟲、Yahoo 電影爬蟲！
+>課程參考 :【Python 爬蟲 】2 小時初學者課程 ：一次學會 PTT 爬蟲、Hahow 爬蟲、Yahoo 電影爬蟲！
 
-台灣股票數據自動化採集與分析系統
+---
+
     ##開發環境與工具
-        作業系統:Window
+    |項目|配置內容|
+    |**作業系統**|Window|
         開發工具:Visual Studio Code(VScode)
         程式語言:Python 3.13.9
         主要套件:
