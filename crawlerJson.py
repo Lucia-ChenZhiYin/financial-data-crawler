@@ -40,7 +40,7 @@ print("資料已成功儲存為json")
 
 #print(response.text)
 if response.status_code == 200:
-    with open('output.html','w',encoding='utf-8') as f:
+    with open('NBAoutput.html','w',encoding='utf-8') as f:
         f.write(response.text)
     print("寫入成功")
 else:
