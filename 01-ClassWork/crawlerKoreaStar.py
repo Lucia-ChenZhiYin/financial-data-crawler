@@ -29,6 +29,7 @@ def main():
 
     spans = soup.find_all("span", class_="article-meta-value")
     title = spans[2].text.strip()
+    #將標題頭尾可能會有的空白去掉以取得標題
 
     #1.建立圖片資料夾
     dir_name = f"image/{title}"
