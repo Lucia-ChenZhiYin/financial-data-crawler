@@ -54,3 +54,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#程式碼問題:下載圖片失敗，在SelfStudy進行修正
