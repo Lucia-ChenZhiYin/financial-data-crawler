@@ -11,10 +11,12 @@ headers = {
 news_list = []
 startPage = 1
 endPage = 2
+
 for page in range(startPage, endPage+1):
     url = f"https://api.cnyes.com/media/api/v1/newslist/category/tw_stock?page={page}&limit=30&showOutsource=1"
-#使用f-string可以把page的變數變動帶入網址
+    #使用f-string可以把page的變數變動帶入網址
     response = requests.get(url, headers=headers)
+
     if response.status_code == 200:
         data = response.json()
         news_items = data['items']['data']
@@ -26,12 +28,17 @@ for page in range(startPage, endPage+1):
             news_url = f"https://news.cnyes.com/news/id/{news_id}"
 
             raw_content = item.get('content') or item.get('summary') or ''
-            decoded_content = html.unescape(raw_content)
-            clean_content = BeautifulSoup(decoded_content, 'html.parser').get_text()
+            #content有內容就拿，沒有就拿summary，在沒有就是空白，避免報錯
+            
+            fix_content = html.unescape(raw_content)
+            #將&lt;p&gt;解碼還原成<p>
+            
+            clean_content = BeautifulSoup(fix_content, 'html.parser').get_text()
             clean_content = clean_content.replace('\n', ' ').strip()
             #使用BeautifulSoup清理HTML標籤只留文字，
+            
             if clean_content:
-                summary = clean_content[:20].strip() + "..."
+                summary = clean_content[:120].strip() + "..."
                 #切片語法，取前120字
             else:
                 summary = "無內文"
