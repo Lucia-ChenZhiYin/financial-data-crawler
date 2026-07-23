@@ -11,6 +11,7 @@ if response.status_code == 200:
 
     #print(data['data']['courseData']['products'])
     products = data['data']['courseData']['products']
+    #將資料從API的字典提取
     course_list = []
     for product in products:
         course_data = [
