@@ -3,12 +3,13 @@ from bs4 import BeautifulSoup
 import os
 
 
-
+    #3.下載圖片
 def download_img(url, save_path):
     print(f"正在下載圖片:{url}")
     response = requests.get(url)
     with open(save_path, 'wb') as file:
         file.write(response.content)
+    #'wb'二進位寫入模式
     print("-" * 30)
 
 def main():
@@ -24,14 +25,16 @@ def main():
 
     spans = soup.find_all("span", class_="article-meta-value")
     title = spans[2].text
+    #索引[2]為文章標題作為資料夾檔名
 
 
 
     #1.建立圖片資料夾
     dir_name = f"image/{title}"
     if not os.path.exists(dir_name):
+        #檢查電腦硬碟裡是否已經有此資料夾
         os.makedirs(dir_name)
-    #'dirs'資料夾
+        #建'dirs'資料夾
 
     #2.找到網頁所有圖片
     links = soup.find_all("a")
